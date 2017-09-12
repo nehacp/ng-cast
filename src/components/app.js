@@ -3,8 +3,6 @@ angular.module('video-player')
 .component('app', {
 
   controller: function (youTube) {
-    console.log('app', this);
-    this.videos = window.exampleVideoData;
     this.selectVideo = (index) => {
       this.currentVideo = this.videos[index];
     };
@@ -17,6 +15,8 @@ angular.module('video-player')
     this.searchResults = (input) => {
       youTube.search(input, this.updateVideos);
     };
+
+    youTube.search('coffee', this.updateVideos);
     
     this.currentVideo = this.videos ? this.videos[0] : {};
   },

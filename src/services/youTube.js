@@ -9,9 +9,10 @@ angular.module('video-player')
     key: window.YOUTUBE_API_KEY
   };
 
-  let request = 'https://www.googleapis.com/youtube/v3/search?';
 
   let fetch = function(query, callback) {
+
+    let request = 'https://www.googleapis.com/youtube/v3/search?';
     config.q = query;
     for (let key in config) {
       request += `${key}=${config[key]}&`;
