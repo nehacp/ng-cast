@@ -5,7 +5,7 @@ angular.module('video-player')
   controller: function () {
     console.log('app', this);
     this.videos = window.exampleVideoData;
-    this.currentVideo = this.videos[0];
+    this.currentVideo;
     this.selectVideo = (index) => {
       this.currentVideo = this.videos[index];
     };
