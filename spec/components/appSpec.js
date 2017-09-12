@@ -45,7 +45,7 @@ describe('app', function() {
   });
 
   it('should render a video player element, a search element, and a video list element', function() {
-    var player = element.find('.video-player iframe');
+    var player = element.find('.video-player');
     expect(player.length).to.equal(1);
     var list = element.find('ul.video-list');
     expect(list.length).to.equal(1);
