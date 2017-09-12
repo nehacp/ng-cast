@@ -7,7 +7,11 @@ angular.module('video-player')
 
   controller: function () {
 
-    this.inputClick = () => {  
+    this.inputClick = ($event) => { 
+      if ($event.keyCode === 13) {
+        this.result(this.input);
+        this.input = '';
+      }
     };
 
     this.onClick = (input) => {

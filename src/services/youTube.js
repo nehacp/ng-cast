@@ -13,7 +13,9 @@ angular.module('video-player')
   let fetch = function(query, callback) {
 
     let request = 'https://www.googleapis.com/youtube/v3/search?';
+
     config.q = query;
+
     for (let key in config) {
       request += `${key}=${config[key]}&`;
     }
@@ -26,6 +28,6 @@ angular.module('video-player')
   };
 
   return {
-    search: fetch
+    search: _.debounce(fetch, 500)
   };
 });
